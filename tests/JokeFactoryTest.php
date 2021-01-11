@@ -17,7 +17,7 @@ class JokeFactoryTest extends TestCase
     public function it_return_a_random_joke()
     {
         $mock = new MockHandler([
-            new Response(200, [], '{ "type": "success", "value": { "id": 221, "joke": "Chuck Norris is the only person to ever win a staring contest against Ray Charles and Stevie Wonder.", "categories": [] } }')
+            new Response(200, [], '{ "type": "success", "value": { "id": 221, "joke": "Chuck Norris is the only person to ever win a staring contest against Ray Charles and Stevie Wonder.", "categories": [] } }'),
         ]);
 
         $handlerStack = HandlerStack::create($mock);
