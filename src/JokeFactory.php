@@ -2,35 +2,31 @@
 
 namespace Amasir20\CreepyJokes;
 
+use GuzzleHttp\Client;
+
 class JokeFactory
 {
-    /**
-     * @var array
-     */
-    protected $jokes = [
-        'Due to the Rector\'s illness, Wednesday\'s healing services will be discontinued until further notice.',
-        'The Rev. Merriwether spoke briefly, much to the delight of the audience.',
-        'On a church bulletin during the minister\'s illness: GOD IS GOOD; Dr. Hargreaves is better.',
-    ];
+
+    const API_ENDPOINT = 'http://api.icndb.com/jokes/random';
+
+    protected $client;
 
     /**
      * JokeFactory constructor.
-     * @param array $jokes
+     * @param Client $client
      */
-    public function __construct(array $jokes = null)
+    public function __construct(Client $client = null)
     {
-        if ($jokes) {
-            $this->jokes = $jokes;
-        }
-    }
-
-    public function hello()
-    {
-        echo 'my first creepy joke';
+        $this->client = $client ?: new Client();
     }
 
     public function getRandomJoke()
     {
-        return $this->jokes[array_rand($this->jokes)];
+
+        $response = $this->client->get(self::API_ENDPOINT);
+
+        $joke = json_decode($response->getBody()->getContents());
+
+        return $joke->value->joke;
     }
 }

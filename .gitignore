@@ -4,3 +4,5 @@ composer.lock
 .idea
 .phpunit.result.cache
 .styleci.yml
+phpunit.xml.dist.bak
+html
