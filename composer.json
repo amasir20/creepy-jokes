@@ -1,0 +1,25 @@
+{
+    "name": "amasir20/creepy-jokes",
+    "description": "Create random jokes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amasir Ameerdeen",
+            "email": "amasir20@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Amasir20\\CreepyJokes\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Amasir20\\CreepyJokes\\Tests\\" : "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
