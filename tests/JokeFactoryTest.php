@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Amasir20\CreepyJokes\Tests;
-
 
 use Amasir20\CreepyJokes\JokeFactory;
 use PHPUnit\Framework\TestCase;
@@ -21,5 +19,4 @@ class JokeFactoryTest extends TestCase
 
         $this->assertSame('This is a joke', $joke);
     }
-
 }
